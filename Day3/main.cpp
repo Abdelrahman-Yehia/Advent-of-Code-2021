@@ -162,6 +162,8 @@ void part2(vector<string> input){
     cout << "Part 2: " << calcO2(input) * calcCo2(input) << endl;
 }
 
+
+
 int main() {
     //ios_base::sync_with_stdio(false);
     //cin.tie(NULL);
