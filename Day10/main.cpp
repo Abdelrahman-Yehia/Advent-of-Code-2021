@@ -32,7 +32,7 @@ vector<long long> part1(vector<string> lines){
     for(auto s: lines){
         int sc = 0;
         long long sc2 = 0;
-        
+
         stack<char> currLine;
         for(auto c: s){
             if(existOpen(c)){
@@ -96,4 +96,21 @@ int main() {
     }
     part2(part1(lines));
     return 0;
+}
+
+
+int solution(string s) {
+    int ans = 0;
+    for(int i = 1;i<=s.length()-2;i++){
+        string a;
+        a = s.substr(0,i);
+        for(int j = 1;j<=s.length()-i-1; j++){
+            string b,c;
+            b = s.substr(i,j);
+            c = s.substr(i+j);
+            if(a+b != b+c && c+a != b+c && a+b != c+a)
+                ans++;
+        }
+    }
+    return ans;
 }
